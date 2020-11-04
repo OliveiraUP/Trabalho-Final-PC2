@@ -1,0 +1,132 @@
+package br.com.prog2.tf.view;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JMenuBar;
+import javax.swing.JList;
+import javax.swing.JMenu;
+import java.awt.Font;
+import javax.swing.JButton;
+import javax.swing.JTextPane;
+import javax.swing.JLabel;
+import javax.swing.ImageIcon;
+import javax.swing.SwingConstants;
+import java.awt.Dimension;
+import javax.swing.BoxLayout;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import java.awt.SystemColor;
+import javax.swing.UIManager;
+import javax.swing.JTextArea;
+import java.awt.Color;
+import javax.swing.JTextField;
+import javax.swing.DropMode;
+import java.awt.Window.Type;
+
+public class TelaPrincipal extends JFrame {
+
+	private JPanel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					TelaPrincipal frame = new TelaPrincipal();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public TelaPrincipal() {
+		setMaximumSize(new Dimension(800, 600));
+		setMinimumSize(new Dimension(800, 600));
+		setResizable(false);
+		setBackground(Color.BLACK);
+		setTitle("Pacotes Uva");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 800, 609);
+		
+		JMenuBar menuBar = new JMenuBar();
+		menuBar.setBackground(SystemColor.desktop);
+		menuBar.setToolTipText("Página Inicial");
+		setJMenuBar(menuBar);
+		
+		JMenu Consulta = new JMenu("Consulta");
+		Consulta.setForeground(SystemColor.desktop);
+		Consulta.setBackground(SystemColor.menu);
+		Consulta.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		menuBar.add(Consulta);
+		
+		JButton btnNewButton_1 = new JButton("Cliente");
+		btnNewButton_1.setBorderPainted(false);
+		btnNewButton_1.setBackground(SystemColor.menu);
+		btnNewButton_1.setFont(new Font("Segoe UI", Font.PLAIN, 12));
+		Consulta.add(btnNewButton_1);
+		
+		JButton Hospedagem_1 = new JButton("Hospedagem");
+		Hospedagem_1.setBorderPainted(false);
+		Hospedagem_1.setFont(new Font("Segoe UI", Font.PLAIN, 12));
+		Consulta.add(Hospedagem_1);
+		
+		JButton Chale_1 = new JButton("Chal\u00E9");
+		Chale_1.setBorderPainted(false);
+		Consulta.add(Chale_1);
+		Chale_1.setFont(new Font("Segoe UI", Font.PLAIN, 12));
+		
+		JMenu Cliente = new JMenu("Cadastro");
+		Cliente.setBackground(SystemColor.menu);
+		Cliente.setForeground(SystemColor.desktop);
+		Cliente.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		menuBar.add(Cliente);
+		
+		JButton btnNewButton = new JButton("Cliente");
+		btnNewButton.setBorderPainted(false);
+		btnNewButton.setBackground(UIManager.getColor("Button.background"));
+		Cliente.add(btnNewButton);
+		btnNewButton.setFont(new Font("Segoe UI", Font.PLAIN, 12));
+		
+		JButton Hospedagem = new JButton("Hospedagem");
+		Hospedagem.setBorderPainted(false);
+		Hospedagem.setFont(new Font("Segoe UI", Font.PLAIN, 12));
+		Cliente.add(Hospedagem);
+		
+		JButton Chale = new JButton("Chal\u00E9");
+		Chale.setBorderPainted(false);
+		Chale.setFont(new Font("Segoe UI", Font.PLAIN, 12));
+		Cliente.add(Chale);
+		
+		JMenu Sair = new JMenu("Sair");
+		Sair.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		Sair.setBackground(SystemColor.menu);
+		Sair.setForeground(SystemColor.desktop);
+		menuBar.add(Sair);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setLayout(new BorderLayout(0, 0));
+		setContentPane(contentPane);
+		
+		JPanel panel = new JPanel();
+		contentPane.add(panel, BorderLayout.CENTER);
+		panel.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setBounds(-134, 0, 920, 545);
+		lblNewLabel.setIcon(new ImageIcon("D:\\PC2-TRAB1\\Pc2Trabalho\\src\\images\\principal.jpg"));
+		panel.add(lblNewLabel);
+	}
+}

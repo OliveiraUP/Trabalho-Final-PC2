@@ -1,0 +1,74 @@
+package br.com.prog2.tf.view;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.SystemColor;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JPanel;
+import javax.swing.UIManager;
+import javax.swing.border.EmptyBorder;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class TelaMenuPrincipal extends JFrame {
+
+	private JPanel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					TelaMenuPrincipal frame = new TelaMenuPrincipal();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public TelaMenuPrincipal() {
+		setMaximumSize(new Dimension(800, 600));
+		setMinimumSize(new Dimension(800, 600));
+		setResizable(false);
+		setBackground(new Color(255, 255, 0));
+		setTitle("Migalho Turismo");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 800, 609);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setLayout(new BorderLayout(0, 0));
+		setContentPane(contentPane);
+		
+		JPanel panel = new JPanel();
+		contentPane.add(panel, BorderLayout.CENTER);
+		panel.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setBackground(Color.WHITE);
+		lblNewLabel.setBounds(-134, 0, 920, 545);
+		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\ferna\\OneDrive\\\u00C1rea de Trabalho\\PC2-TRAB1\\Pc2Trabalho\\src\\images\\image.jpg"));
+		panel.add(lblNewLabel);
+		
+		JButton btnNewButtonCadastrarCliente = new JButton("Cadastrar Cliente");
+		btnNewButtonCadastrarCliente.setBackground(Color.WHITE);
+		btnNewButtonCadastrarCliente.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnNewButtonCadastrarCliente.setBounds(95, 234, 160, 23);
+		panel.add(btnNewButtonCadastrarCliente);
+	}
+}

@@ -1,0 +1,122 @@
+package br.com.prog2.tf.view;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.SystemColor;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JPanel;
+import javax.swing.UIManager;
+import javax.swing.border.EmptyBorder;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JTextField;
+import javax.swing.JTextArea;
+import java.awt.FlowLayout;
+
+public class TelaMenuPrincipal extends JFrame {
+
+	private JPanel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					TelaMenuPrincipal frame = new TelaMenuPrincipal();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public TelaMenuPrincipal() {
+		setMaximumSize(new Dimension(800, 600));
+		setMinimumSize(new Dimension(800, 600));
+		setResizable(false);
+		setBackground(new Color(255, 255, 0));
+		setTitle("Migalho Turismo");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 800, 609);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setLayout(new BorderLayout(0, 0));
+		setContentPane(contentPane);
+		
+		JPanel panel = new JPanel();
+		contentPane.add(panel, BorderLayout.CENTER);
+		panel.setLayout(null);
+		
+		JButton btnNewButtonCliente = new JButton("Cliente");
+		btnNewButtonCliente.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnNewButtonCliente.setBounds(54, 163, 193, 36);
+		panel.add(btnNewButtonCliente);
+		
+		JButton btnNewButtonHospedagem = new JButton("Hospedagem");
+		btnNewButtonHospedagem.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnNewButtonHospedagem.setBounds(54, 257, 193, 36);
+		panel.add(btnNewButtonHospedagem);
+		
+		JButton btnNewButtonChale = new JButton("Chal\u00E9");
+		btnNewButtonChale.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnNewButtonChale.setBounds(54, 355, 193, 36);
+		panel.add(btnNewButtonChale);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBackground(Color.BLACK);
+		panel_1.setBounds(0, 0, 786, 41);
+		panel.add(panel_1);
+		panel_1.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+		
+		JTextArea txtrCadastrar = new JTextArea();
+		txtrCadastrar.setForeground(Color.WHITE);
+		txtrCadastrar.setToolTipText("");
+		txtrCadastrar.setSelectedTextColor(Color.WHITE);
+		txtrCadastrar.setBackground(Color.BLACK);
+		txtrCadastrar.setFont(new Font("Monospaced", Font.PLAIN, 20));
+		txtrCadastrar.setText("Cadastrar");
+		panel_1.add(txtrCadastrar);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\ferna\\OneDrive\\\u00C1rea de Trabalho\\PC2-TRAB1\\Pc2Trabalho\\src\\images\\image.jpg"));
+		lblNewLabel.setBounds(0, 37, 786, 533);
+		panel.add(lblNewLabel);
+		
+		btnNewButtonChale.addActionListener(new java.awt.event.ActionListener() {
+		    public void actionPerformed(java.awt.event.ActionEvent evt) {
+		    	TelaCadastroChale telaCadastroChale = new TelaCadastroChale();
+		    	TelaMenuPrincipal.this.dispose();
+		    	telaCadastroChale.setVisible(true);
+		    }
+		});
+		btnNewButtonCliente.addActionListener(new java.awt.event.ActionListener() {
+		    public void actionPerformed(java.awt.event.ActionEvent evt) {
+		    	TelaCadastroCliente telaCadastroCliente = new TelaCadastroCliente();
+		    	TelaMenuPrincipal.this.dispose();
+		    	telaCadastroCliente.setVisible(true);
+		    }
+		});
+		btnNewButtonHospedagem.addActionListener(new java.awt.event.ActionListener() {
+		    public void actionPerformed(java.awt.event.ActionEvent evt) {
+		    	TelaCadastroHospedagem telaCadastroHospedagem = new TelaCadastroHospedagem();
+		    	TelaMenuPrincipal.this.dispose();
+		    	telaCadastroHospedagem.setVisible(true);
+		    }
+		});
+	}
+}

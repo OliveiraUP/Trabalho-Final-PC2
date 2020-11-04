@@ -1,0 +1,16 @@
+package br.com.prog2.tf.model;
+
+import java.util.ArrayList;
+import java.util.Date;
+
+public class Hospedagem {
+	private String rgCliente;
+	private Chale codChale;
+	private String estado;
+	private Date dataInicio;
+	private Date dataFim;
+	private Integer qtdPessoas;
+	private Double desconto;
+	private Double valorFinal;
+	private ArrayList<Cliente> hospedes = new ArrayList<Cliente>();
+}

@@ -1,0 +1,15 @@
+package br.com.prog2.tf.model;
+
+import java.util.ArrayList;
+
+public class Cliente {
+	private Integer codCliente;
+	private String nomeCliente;
+	private String rgCliente;
+	private String enderecoCliente;
+	private String bairroCliente;
+	private String cidadeCliente;
+	private String estadoCliente;
+	private String CEPCliente;
+	private ArrayList<Hospedagem> hospedagens = new ArrayList<Hospedagem>();
+}

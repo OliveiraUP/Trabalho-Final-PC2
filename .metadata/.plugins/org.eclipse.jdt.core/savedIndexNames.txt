@@ -1,0 +1,5 @@
+INDEX VERSION 1.131+C:\Users\ferna\OneDrive\Área de Trabalho\PC2-TRAB1\.metadata\.plugins\org.eclipse.jdt.core
+951230537.index
+2043444479.index
+3538468441.index
+1671692264.index

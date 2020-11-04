@@ -1,0 +1,12 @@
+package br.com.prog2.tf.model;
+
+
+
+public class Chale {
+	private Integer codChale;
+	private String localizacao;
+	private Integer capacidade;
+	private Double valorAltaEstacao;
+	private Double valorBaixaEstacao;
+	private Hospedagem hospedagem;
+}

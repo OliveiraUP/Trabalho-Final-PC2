@@ -1,0 +1,71 @@
+package br.com.prog2.tf.model;
+
+import java.util.ArrayList;
+import java.util.Date;
+
+public class Hospedagem {
+	private String rgCliente;
+	private Chale codChale;
+	private String estado;
+	private Date dataInicio;
+	private Date dataFim;
+	private Integer qtdPessoas;
+	private Double desconto;
+	private Double valorFinal;
+	private ArrayList<Cliente> hospedes = new ArrayList<Cliente>();
+	
+	public String getRgCliente() {
+		return rgCliente;
+	}
+	public void setRgCliente(String rgCliente) {
+		this.rgCliente = rgCliente;
+	}
+	public Chale getCodChale() {
+		return codChale;
+	}
+	public void setCodChale(Chale codChale) {
+		this.codChale = codChale;
+	}
+	public String getEstado() {
+		return estado;
+	}
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+	public Date getDataInicio() {
+		return dataInicio;
+	}
+	public void setDataInicio(Date dataInicio) {
+		this.dataInicio = dataInicio;
+	}
+	public Date getDataFim() {
+		return dataFim;
+	}
+	public void setDataFim(Date dataFim) {
+		this.dataFim = dataFim;
+	}
+	public Integer getQtdPessoas() {
+		return qtdPessoas;
+	}
+	public void setQtdPessoas(Integer qtdPessoas) {
+		this.qtdPessoas = qtdPessoas;
+	}
+	public Double getDesconto() {
+		return desconto;
+	}
+	public void setDesconto(Double desconto) {
+		this.desconto = desconto;
+	}
+	public Double getValorFinal() {
+		return valorFinal;
+	}
+	public void setValorFinal(Double valorFinal) {
+		this.valorFinal = valorFinal;
+	}
+	public ArrayList<Cliente> getHospedes() {
+		return hospedes;
+	}
+	public void setHospedes(ArrayList<Cliente> hospedes) {
+		this.hospedes = hospedes;
+	}
+}
