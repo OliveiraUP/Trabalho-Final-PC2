@@ -1,0 +1,27 @@
+package br.com.prog2.tf.controller;
+
+import java.util.Date;
+
+
+
+import br.com.prog2.tf.dao.ExceptionDAO;
+import br.com.prog2.tf.model.Cliente;
+
+public class ClienteController {
+
+	static Integer codCliente = 1;
+	public boolean cadastrarCliente(String nomeCliente, String rgCliente, String enderecoCliente, 
+									String bairroCliente, String cidadeCliente, String estadoCliente,
+									String CEPCliente, Date nascimentoCLiente) throws ExceptionDAO
+	{
+		if(codCliente>0) {
+			Cliente cliente = new Cliente(codCliente, nomeCliente, rgCliente, enderecoCliente, bairroCliente, cidadeCliente, estadoCliente,
+											CEPCliente, nascimentoCLiente);
+			codCliente++;
+			cliente.cadastrarCliente(cliente);
+			return true;
+		}
+		return false;
+		
+	}
+}

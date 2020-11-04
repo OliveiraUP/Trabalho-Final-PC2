@@ -13,7 +13,7 @@ public class ConnectionMVC {
 			e.printStackTrace();
 		}
 		try {
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/mvc?useSSl=false", "root", "23Fern@n102000do");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/MVC?useSSl=false", "root", "23Fern@n102000do");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

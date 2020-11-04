@@ -1,6 +1,6 @@
 package br.com.prog2.tf.dao;
 
-import java.sql.Connection;
+
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Date;

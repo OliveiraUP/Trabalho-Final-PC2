@@ -8,11 +8,6 @@ import br.com.prog2.tf.dao.HospedagemDAO;
 
 public class Hospedagem {
 	private Integer CodHospedagem;
-	
-
-	private String rgCliente;
-	
-
 	private Integer codChale;
 	private String estado;
 	private Date dataInicio;
@@ -26,12 +21,6 @@ public class Hospedagem {
 	}
 	public void setCodHospedagem(Integer codHospedagem) {
 		CodHospedagem = codHospedagem;
-	}
-	public String getRgCliente() {
-		return rgCliente;
-	}
-	public void setRgCliente(String rgCliente) {
-		this.rgCliente = rgCliente;
 	}
 
 	public Integer getCodChale() {

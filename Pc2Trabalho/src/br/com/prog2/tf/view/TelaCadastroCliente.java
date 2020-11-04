@@ -1,19 +1,18 @@
 package br.com.prog2.tf.view;
 
 import java.awt.Color;
-import java.text.ParseException;
 import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.SystemColor;
-import java.sql.Date;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
-import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -21,6 +20,8 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
+
+import br.com.prog2.tf.controller.ClienteController;
 
 //import com.sun.org.apache.xerces.internal.impl.xpath.regex.ParseException;
 
@@ -206,37 +207,37 @@ public class TelaCadastroCliente extends JFrame {
 		btnNewButtonCancelar.setBounds(560, 452, 112, 43);
 		contentPane.add(btnNewButtonCancelar);
 		
-		JComboBox comboBoxEstado = new JComboBox();
-		comboBoxEstado.setModel(new DefaultComboBoxModel(new String[] {"Selecione um Estado", "Acre (AC)", "Alagoas (AL)", "Amap\u00E1 (AP)", "Amazonas (AM)", "Bahia (BA)", "Cear\u00E1 (CE)", "Distrito Federal (DF)", "Esp\u00EDrito Santo (ES)", "Goi\u00E1s (GO)", "Maranh\u00E3o (MA)", "Mato Grosso (MT)", "Mato Grosso do Sul (MS)", "Minas Gerais (MG)", "Par\u00E1 (PA)", "Para\u00EDba (PB)", "Paran\u00E1 (PR)", "Pernambuco (PE)", "Piau\u00ED (PI)", "Rio de Janeiro (RJ)", "Rio Grande do Norte (RN)", "Rio Grande do Sul (RS)", "Rond\u00F4nia (RO)", "Roraima (RR)", "Santa Catarina (SC)", "S\u00E3o Paulo (SP)", "Sergipe (SE)", "Tocantins (TO)"}));
-		comboBoxEstado.setBounds(130, 292, 278, 22);
-		contentPane.add(comboBoxEstado);
+		jcomboBoxEstado.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+        jcomboBoxEstado.setModel(new DefaultComboBoxModel<>(new String[] {"Selecione um Estado", "Acre (AC)", "Alagoas (AL)", "Amap\u00E1 (AP)", "Amazonas (AM)", "Bahia (BA)", "Cear\u00E1 (CE)", "Distrito Federal (DF)", "Esp\u00EDrito Santo (ES)", "Goi\u00E1s (GO)", "Maranh\u00E3o (MA)", "Mato Grosso (MT)", "Mato Grosso do Sul (MS)", "Minas Gerais (MG)", "Par\u00E1 (PA)", "Para\u00EDba (PB)", "Paran\u00E1 (PR)", "Pernambuco (PE)", "Piau\u00ED (PI)", "Rio de Janeiro (RJ)", "Rio Grande do Norte (RN)", "Rio Grande do Sul (RS)", "Rond\u00F4nia (RO)", "Roraima (RR)", "Santa Catarina (SC)", "S\u00E3o Paulo (SP)", "Sergipe (SE)", "Tocantins (TO)"}));
+        jcomboBoxEstado.setBounds(130, 293, 278, 21);
+        contentPane.add(jcomboBoxEstado);
 		
 		btnNewButtonSalvar.addActionListener(new java.awt.event.ActionListener() {
 		    public void actionPerformed(java.awt.event.ActionEvent evt) {
-		    		String estado = jcomboBoxEstado.getSelectedItem().toString();
-		    		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-		    		String data = textFieldDataDeNascimento.getText();
-						Date dateConvertida = null;
-						try {
-							dateConvertida = (Date) sdf.parse(data);
-						} catch (ParseException e) {
-							JOptionPane.showMessageDialog(null, "Erro! Data não preenchida no formato: dd/MM/yyyy\n" + e);
-						}
-		    		Boolean sucesso;
-		    		try {
-		    			ClienteController clienteController = new ClienteController();
-		    			sucesso = clienteController.cadastrarCliente(textFieldNome.getText(), textFieldRg.getText(), textFieldEndereco.getText(),
-		    										textFieldBairro.getText(), textFieldCidade.getText(), estado, textFieldCep.getText(),
-		    										dateConvertida);
-		    			if(sucesso == true) {
-		    				JOptionPane.showMessageDialog(null, "O cadastro foi realizado com sucesso");
-		    			}
-		    			else {
-		    				JOptionPane.showMessageDialog(null, "Os campos não foram preenchidos corretamente!");
-		    			}
-		    		} catch (Exception ex) {
-		    			JOptionPane.showMessageDialog(null, "Erro!" + ex);
-		    		}
+		    	String estado = jcomboBoxEstado.getSelectedItem().toString();
+                SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+                String data = textFieldDataDeNascimento.getText();
+                    Date dateConvertida = null;
+                    try {
+                        dateConvertida = sdf.parse(data);
+                    } catch (ParseException e) {
+                        JOptionPane.showMessageDialog(null, "Erro! Data não preenchida no formato: dd/MM/yyyy\n" + e);
+                    }
+                Boolean sucesso;
+                try {
+                    ClienteController clienteController = new ClienteController();
+                    sucesso = clienteController.cadastrarCliente(textFieldNome.getText(), textFieldRg.getText(), textFieldEndereco.getText(),
+                                                textFieldBairro.getText(), textFieldCidade.getText(), estado, textFieldCep.getText(),
+                                                dateConvertida);
+                    if(sucesso == true) {
+                        JOptionPane.showMessageDialog(null, "O cadastro foi realizado com sucesso");
+                    }
+                    else {
+                        JOptionPane.showMessageDialog(null, "Os campos não foram preenchidos corretamente!");
+                    }
+                } catch (Exception ex) {
+                    JOptionPane.showMessageDialog(null, "Erro!" + ex);
+                }
 		  
 		    }
 		});
@@ -256,7 +257,7 @@ public class TelaCadastroCliente extends JFrame {
 		    	textFieldEndereco.setText("");
 		    	textFieldBairro.setText("");
 		    	textFieldCidade.setText("");
-		    	comboBoxEstado.setSelectedIndex(0);
+		    	jcomboBoxEstado.setSelectedIndex(0);
 		    	textFieldCep.setText("");
 		    	textFieldDataDeNascimento.setText("");
 		    }

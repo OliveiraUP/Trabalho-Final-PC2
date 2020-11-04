@@ -1,2 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.sql.Date"/>
+    <fullyQualifiedTypeName name="javax.swing.JComboBox"/>
+    <fullyQualifiedTypeName name="java.awt.Cursor"/>
+    <fullyQualifiedTypeName name="br.com.prog2.tf.dao.ChaleDAO"/>
+    <fullyQualifiedTypeName name="br.com.prog2.tf.dao.ClienteDAO"/>
+    <fullyQualifiedTypeName name="br.com.prog2.tf.dao.HospedagemDAO"/>
+    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+    <fullyQualifiedTypeName name="java.sql.SQLException"/>
+    <fullyQualifiedTypeName name="com.sun.jdi.connect.spi.Connection"/>
+    <fullyQualifiedTypeName name="br.com.prog2.tf.model.Hospedagem"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="br.com.prog2.tf.model.Cliente"/>
+    <fullyQualifiedTypeName name="br.com.prog2.tf.model.Chale"/>
+    <fullyQualifiedTypeName name="br.com.prog2.tf.dao.ExceptionDAO"/>
+    <fullyQualifiedTypeName name="br.com.prog2.tf.controller.HospedagemController"/>
+    <fullyQualifiedTypeName name="br.com.prog2.tf.controller.ClienteController"/>
+    <fullyQualifiedTypeName name="br.com.prog2.tf.controller.ChaleController"/>
+    <fullyQualifiedTypeName name="com.sun.org.apache.xerces.internal.impl.xpath.regex.ParseException"/>
+    <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
+</qualifiedTypeNameHistroy>
